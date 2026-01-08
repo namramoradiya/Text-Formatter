@@ -1,13 +1,33 @@
-import { Component } from '@angular/core';
-import {HomeComponent} from '../home/home.component';
-import {FormattersComponent} from '../formatters/formatters.component'
+import { Component,Input,Output,EventEmitter, input } from '@angular/core';
+// import {HomeComponent} from '../home/home.component';
+// import {FormattersComponent} from '../formatters/formatters.component'
 @Component({
   selector: 'app-text-display',
   standalone: true,
-  imports: [HomeComponent,FormattersComponent],
+  imports: [],
   templateUrl: './text-display.component.html',
   styleUrl: './text-display.component.css'
 })
 export class TextDisplayComponent {
 
+      @Input() inputText: string = '';
+      @Input() outputText: string = '';
+
+      @Output() textChanged = new EventEmitter<string>();
+
+  // onTextChange(value: string) {
+  //   this.textChanged.emit(value);
+  // }
+
+
+  onTextChange(event: Event): void {
+  const textarea = event.target as HTMLTextAreaElement;
+  this.textChanged.emit(textarea.value);
+}
+
+  // onTextChange(event: Event): void {
+  //   const target = event.target as HTMLInputElement | null;
+  //   const value = target ? target.value : '';
+  //   this.textChanged.emit(value);
+  // }
 }

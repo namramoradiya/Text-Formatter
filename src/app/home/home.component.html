@@ -3,9 +3,15 @@
 
   <div class="content">
     <!-- Left Side -->
-    <app-text-display></app-text-display>
+   <app-text-display
+  [inputText]="inputText"
+  [outputText]="outputText"
+  (textChanged)="inputText = $event">
+</app-text-display>
 
-    <!-- Right Side -->
-    <app-formatters></app-formatters>
+<app-formatters
+  (reverseClicked)="reverseText()">
+</app-formatters>
+
   </div>
 </div>
