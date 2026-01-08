@@ -13,6 +13,7 @@ export class FormattersComponent {
   @Output() reverseClicked = new EventEmitter<void>();
   @Output() clearClicked = new EventEmitter<void>();
   @Output() whiteSpaceRemoveClicked = new EventEmitter<void>();
+  @Output() removeSpecialCharClicked = new EventEmitter<void>();
 
   onReverse() {
     this.reverseClicked.emit(); 
@@ -26,6 +27,11 @@ export class FormattersComponent {
   onWhiteSpaceRemove()
   {
     this.whiteSpaceRemoveClicked.emit();
+  }
+
+  onRemoveSpecialChar()
+  {
+    this.removeSpecialCharClicked.emit();
   }
 
 }

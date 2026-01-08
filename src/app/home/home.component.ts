@@ -27,4 +27,9 @@ export class HomeComponent {
   {
     this.outputText = this.inputText.trim().replace(/\s+/g, '');
   }
+
+  removeSpecialCharacters()
+  {
+    this.outputText = this.inputText.replace(/[^\w\s]/gi, '');
+  }
 }
