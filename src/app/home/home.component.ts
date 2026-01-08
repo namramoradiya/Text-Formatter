@@ -22,4 +22,9 @@ export class HomeComponent {
     this.inputText = '';
     this.outputText = '';
   }
+
+  removeWhiteSpace()
+  {
+    this.outputText = this.inputText.trim().replace(/\s+/g, '');
+  }
 }
