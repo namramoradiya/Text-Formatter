@@ -16,4 +16,10 @@ export class HomeComponent {
   reverseText() {
     this.outputText = this.inputText.split('').reverse().join('');
   }
+
+  clearText()
+  {
+    this.inputText = '';
+    this.outputText = '';
+  }
 }

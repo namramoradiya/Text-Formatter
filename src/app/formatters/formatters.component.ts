@@ -11,8 +11,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class FormattersComponent {
 
   @Output() reverseClicked = new EventEmitter<void>();
+  @Output() clearClicked = new EventEmitter<void>();
 
   onReverse() {
     this.reverseClicked.emit(); 
+}  
+
+  onClear()
+  {
+    this.clearClicked.emit();
   }
 }
