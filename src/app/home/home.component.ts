@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input } from '@angular/core';
 import {TextDisplayComponent} from '../text-display/text-display.component'
 import {FormattersComponent} from '../formatters/formatters.component'
 @Component({
@@ -10,4 +10,10 @@ import {FormattersComponent} from '../formatters/formatters.component'
 })
 export class HomeComponent {
 
+   inputText: string = '';
+   outputText: string = '';
+
+  reverseText() {
+    this.outputText = this.inputText.split('').reverse().join('');
+  }
 }
