@@ -6,14 +6,17 @@
    <app-text-display
   [inputText]="inputText"
   [outputText]="outputText"
-  (textChanged)="inputText = $event">
+  (textChanged)="onTextChange($event)">
 </app-text-display>
 
 <app-formatters
   (reverseClicked)="reverseText()"
   (clearClicked)="clearText()"
   (whiteSpaceRemoveClicked)="removeWhiteSpace()"
-  (removeSpecialCharClicked)="removeSpecialCharacters()">
+  (removeSpecialCharClicked)="removeSpecialCharacters()"
+  [wordCount]="wordCount"
+  [charCount]="charCount"
+>
 </app-formatters>
 
   </div>

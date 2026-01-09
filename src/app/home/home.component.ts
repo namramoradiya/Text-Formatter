@@ -12,6 +12,8 @@ export class HomeComponent {
 
    inputText: string = '';
    outputText: string = '';
+   wordCount: number = 0;
+   charCount: number = 0;
 
   reverseText() {
     this.outputText = this.inputText.split('').reverse().join('');
@@ -21,6 +23,8 @@ export class HomeComponent {
   {
     this.inputText = '';
     this.outputText = '';
+    this.wordCount = 0;
+    this.charCount = 0;
   }
 
   removeWhiteSpace()
@@ -32,4 +36,19 @@ export class HomeComponent {
   {
     this.outputText = this.inputText.replace(/[^\w\s]/gi, '');
   }
+
+  onTextChange(newText: string) {
+   this.inputText = newText;
+   this.calculateCounts();
+  }
+  
+  calculateCounts() {
+  const trimmed = this.inputText.trim();
+
+  this.wordCount = trimmed
+    ? trimmed.split(/\s+/).length
+    : 0;
+
+  this.charCount = this.inputText.length;
+}
 }

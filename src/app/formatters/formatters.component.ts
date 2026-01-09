@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output , Input } from '@angular/core';
 // import {HomeComponent} from '../home/home.component';
 // import {TextDisplayComponent} from '../text-display/text-display.component'
 @Component({
@@ -14,6 +14,8 @@ export class FormattersComponent {
   @Output() clearClicked = new EventEmitter<void>();
   @Output() whiteSpaceRemoveClicked = new EventEmitter<void>();
   @Output() removeSpecialCharClicked = new EventEmitter<void>();
+  @Input() wordCount: number = 0;
+  @Input() charCount: number = 0;
 
   onReverse() {
     this.reverseClicked.emit(); 
@@ -33,6 +35,7 @@ export class FormattersComponent {
   {
     this.removeSpecialCharClicked.emit();
   }
+  
 
 }
 
