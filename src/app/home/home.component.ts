@@ -51,4 +51,9 @@ export class HomeComponent {
 
   this.charCount = this.inputText.length;
 }
+
+capitalizeWords()
+{
+  this.outputText = this.inputText.toUpperCase();
+}
 }
