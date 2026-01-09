@@ -14,6 +14,7 @@ export class FormattersComponent {
   @Output() clearClicked = new EventEmitter<void>();
   @Output() whiteSpaceRemoveClicked = new EventEmitter<void>();
   @Output() removeSpecialCharClicked = new EventEmitter<void>();
+  @Output() capitalizeWordClicked = new EventEmitter<void>();
   @Input() wordCount: number = 0;
   @Input() charCount: number = 0;
 
@@ -34,6 +35,11 @@ export class FormattersComponent {
   onRemoveSpecialChar()
   {
     this.removeSpecialCharClicked.emit();
+  }
+
+  onCapitalizeWord()
+  {
+    this.capitalizeWordClicked.emit();
   }
   
 
