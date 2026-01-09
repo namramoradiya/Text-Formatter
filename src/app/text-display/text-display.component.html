@@ -17,10 +17,16 @@
   <label>Output Text :-</label>
 
  <div
-  class="output-box"ha
-  [innerHTML]="outputText"
-  [style.fontSize.px]="fontSize">
+  class="output-box"
+  [style.fontSize.px]="fontSize"
+  [style.fontWeight]="isBold ? 'bold' : 'normal'"
+  [style.fontStyle]="isItalic ? 'italic' : 'normal'"
+  [style.textDecoration]="isUnderline ? 'underline' : 'none'">
+
+  {{ outputText || inputText }}
+
 </div>
+
 
 </div>
 
