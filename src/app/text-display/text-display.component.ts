@@ -12,6 +12,10 @@ export class TextDisplayComponent {
 
       @Input() inputText: string = '';
       @Input() outputText: string = '';
+      @Input() isBold: boolean = false;
+      @Input() isItalic: boolean = false;
+      @Input() isUnderline: boolean = false;
+      @Input() fontSize: number = 14;
 
       @Output() textChanged = new EventEmitter<string>();
 

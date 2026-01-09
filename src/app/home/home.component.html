@@ -6,7 +6,9 @@
    <app-text-display
   [inputText]="inputText"
   [outputText]="outputText"
-  (textChanged)="onTextChange($event)">
+  [fontSize]="fontSize"
+  (textChanged)="onTextChange($event)"
+  >
 </app-text-display>
 
 <app-formatters
@@ -17,6 +19,11 @@
   [wordCount]="wordCount"
   [charCount]="charCount"
   (capitalizeWordClicked)="capitalizeWords()"
+  (boldClicked)="makeBold()"
+  (italicClicked)="makeItalic()"
+  (underlineClicked)="makeUnderline()"
+  (fontIncreaseClicked)="increaseFontSize()"
+  (fontDecreaseClicked)="decreaseFontSize()"
 >
 </app-formatters>
 

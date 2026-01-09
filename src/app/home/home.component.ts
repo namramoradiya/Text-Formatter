@@ -14,6 +14,11 @@ export class HomeComponent {
    outputText: string = '';
    wordCount: number = 0;
    charCount: number = 0;
+   fontSize: number = 14;
+
+  //  isBold = false;
+  // isItalic = false;
+  // isUnderline = false;
 
   reverseText() {
     this.outputText = this.inputText.split('').reverse().join('');
@@ -56,4 +61,50 @@ capitalizeWords()
 {
   this.outputText = this.inputText.toUpperCase();
 }
+// makeBold()
+// {
+//   this.outputText = `<b>${this.inputText}</b>`;
+// }
+
+// makeItalic()
+// {
+//   this.outputText = `<i>${this.inputText}</i>`;
+// }
+// makeUnderline()
+// {
+//   this.outputText = `<u>${this.inputText}</u>`;
+// }
+
+
+
+
+makeBold() {
+  const text = this.outputText || this.inputText;
+  this.outputText = `<b>${text}</b>`;
+}
+
+makeItalic() {
+  const text = this.outputText || this.inputText;
+  this.outputText = `<i>${text}</i>`;
+}
+
+makeUnderline() {
+  const text = this.outputText || this.inputText;
+  this.outputText = `<u>${text}</u>`;
+}
+
+increaseFontSize() {
+  console.log("Increasing font size");
+  this.fontSize += 1;
+}
+
+decreaseFontSize() {
+  console.log("Decreasing font size");
+  if (this.fontSize > 10) {   
+    this.fontSize -= 1;
+  }
+
+
+}
+
 }
