@@ -15,6 +15,11 @@ export class FormattersComponent {
   @Output() whiteSpaceRemoveClicked = new EventEmitter<void>();
   @Output() removeSpecialCharClicked = new EventEmitter<void>();
   @Output() capitalizeWordClicked = new EventEmitter<void>();
+  @Output() boldClicked = new EventEmitter<void>();
+  @Output() italicClicked = new EventEmitter<void>();
+  @Output() underlineClicked = new EventEmitter<void>();
+  @Output() fontIncreaseClicked = new EventEmitter<void>();
+  @Output() fontDecreaseClicked = new EventEmitter<void>();
   @Input() wordCount: number = 0;
   @Input() charCount: number = 0;
 
@@ -41,7 +46,29 @@ export class FormattersComponent {
   {
     this.capitalizeWordClicked.emit();
   }
-  
 
+  onBold()
+  {
+    this.boldClicked.emit();
+  }
+
+  onItalic()
+  {
+    this.italicClicked.emit();
+  }
+
+  onUnderline()
+  {
+    this.underlineClicked.emit();
+  }
+
+  onFontIncrease()
+  {
+    this.fontIncreaseClicked.emit();
+  }
+  onFontDecrease()
+  {
+    this.fontDecreaseClicked.emit();
+  }
 }
 

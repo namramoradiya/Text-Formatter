@@ -14,7 +14,14 @@
   </div>
 
   <div class="section">
-    <label>Output Text :-</label>
-    <textarea [value]="outputText" readonly></textarea>
-  </div>
+  <label>Output Text :-</label>
+
+ <div
+  class="output-box"ha
+  [innerHTML]="outputText"
+  [style.fontSize.px]="fontSize">
+</div>
+
+</div>
+
 </div>
