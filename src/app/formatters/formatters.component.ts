@@ -20,6 +20,7 @@ export class FormattersComponent {
   @Output() underlineClicked = new EventEmitter<void>();
   @Output() fontIncreaseClicked = new EventEmitter<void>();
   @Output() fontDecreaseClicked = new EventEmitter<void>();
+  @Output() removeStyleClicked = new EventEmitter<void>();
   @Input() wordCount: number = 0;
   @Input() charCount: number = 0;
 
@@ -69,6 +70,11 @@ export class FormattersComponent {
   onFontDecrease()
   {
     this.fontDecreaseClicked.emit();
+  }
+
+  onRemoveStyle()
+  {
+    this.removeStyleClicked.emit();
   }
 }
 

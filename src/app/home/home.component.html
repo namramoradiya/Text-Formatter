@@ -8,6 +8,9 @@
   [outputText]="outputText"
   [fontSize]="fontSize"
   (textChanged)="onTextChange($event)"
+  [isBold]="isBold"
+  [isItalic]="isItalic"
+  [isUnderline]="isUnderline"
   >
 </app-text-display>
 
@@ -19,11 +22,12 @@
   [wordCount]="wordCount"
   [charCount]="charCount"
   (capitalizeWordClicked)="capitalizeWords()"
-  (boldClicked)="makeBold()"
-  (italicClicked)="makeItalic()"
-  (underlineClicked)="makeUnderline()"
+  (boldClicked)="toggleBold()"
+  (italicClicked)="toggleItalic()"
+  (underlineClicked)="toggleUnderline()"
   (fontIncreaseClicked)="increaseFontSize()"
   (fontDecreaseClicked)="decreaseFontSize()"
+  (removeStyleClicked)="removeTextStyles()"
 >
 </app-formatters>
 

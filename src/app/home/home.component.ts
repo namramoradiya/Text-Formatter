@@ -16,9 +16,9 @@ export class HomeComponent {
    charCount: number = 0;
    fontSize: number = 14;
 
-  //  isBold = false;
-  // isItalic = false;
-  // isUnderline = false;
+   isBold = false;
+  isItalic = false;
+  isUnderline = false;
 
   reverseText() {
     this.outputText = this.inputText.split('').reverse().join('');
@@ -78,20 +78,20 @@ capitalizeWords()
 
 
 
-makeBold() {
-  const text = this.outputText || this.inputText;
-  this.outputText = `<b>${text}</b>`;
-}
+// makeBold() {
+//   const text = this.outputText || this.inputText;
+//   this.outputText = `<b>${text}</b>`;
+// }
 
-makeItalic() {
-  const text = this.outputText || this.inputText;
-  this.outputText = `<i>${text}</i>`;
-}
+// makeItalic() {
+//   const text = this.outputText || this.inputText;
+//   this.outputText = `<i>${text}</i>`;
+// }
 
-makeUnderline() {
-  const text = this.outputText || this.inputText;
-  this.outputText = `<u>${text}</u>`;
-}
+// makeUnderline() {
+//   const text = this.outputText || this.inputText;
+//   this.outputText = `<u>${text}</u>`;
+// }
 
 increaseFontSize() {
   console.log("Increasing font size");
@@ -103,8 +103,24 @@ decreaseFontSize() {
   if (this.fontSize > 10) {   
     this.fontSize -= 1;
   }
-
-
 }
 
+toggleBold() {
+  this.isBold = !this.isBold;
+}
+
+toggleItalic() {
+  this.isItalic = !this.isItalic;
+}
+
+toggleUnderline() {
+  this.isUnderline = !this.isUnderline;
+}
+
+removeTextStyles() {
+  this.isBold = false;
+  this.isItalic = false;
+  this.isUnderline = false;
+  this.fontSize = 14;
+}
 }
